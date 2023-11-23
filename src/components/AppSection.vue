@@ -10,11 +10,9 @@
 </script>
 
 <template>
-<section class="centered">
-<p>
-    content goes here
-</p>
-</section>
+ <section class="centered">
+    section 2
+ </section>
 </template>
 
 <style lang="scss" scoped>
@@ -26,9 +24,7 @@ section.centered {
     color: white;
     font-size: xx-large;
     // test
-    background-color: $primary-darkgrey;
+    background-color: $primary-blue;
     height: 150px;
 }
-
-
 </style>
