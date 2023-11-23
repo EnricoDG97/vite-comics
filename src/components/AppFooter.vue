@@ -178,7 +178,6 @@
     @include flex(row, space-between, start);
     height: 300px;
     position: relative;
-    z-index: -1;
     .left-side {
         @include flex(row, space-between, start);
         padding: 20px 0;
@@ -206,12 +205,15 @@
 ul {
     list-style-type: none;
     li {
-        cursor: pointer;
         a {
             color: lighten($color: #303030, $amount: 40%);
             text-decoration: none;
             font-size: small;
             text-transform: capitalize;
+            &:hover {
+                cursor: pointer;
+                color: white;
+            }
         }
     }
 }
@@ -228,6 +230,8 @@ h2 {
     background-color: $primary-grey;
     @include flex(row, space-between, center);
     height: 100px;
+    position: relative;
+    z-index: 1;
     .left-side {
         button {
             padding: 8px 12px;
