@@ -84,10 +84,31 @@
                     {
                         text: "dc power visa",
                     },
-                ]
+                ],
+                socials: [
+                    {
+                        src: "footer-facebook.png",
+                    },
+                    {
+                        src: "footer-twitter.png",
+                    },
+                    {
+                        src: "footer-youtube.png",
+                    },
+                    {
+                        src: "footer-pinterest.png",
+                    },
+                    {
+                        src: "footer-periscope.png",
+                    },
+                ],
             };
         },
-        methods: {},
+        methods: {
+            getImageUrl(imgName) {
+                return new URL(`../assets/img/${imgName}`, import.meta.url).href;
+            }
+        },
     };
 </script>
 
@@ -112,7 +133,7 @@
                     <h2>dc</h2>
                     <ul>
                         <li v-for="link in dc" :key="link.text">
-                            <a href="">{{ link.text }}</a>
+                            <a href="" target="_blank">{{ link.text }}</a>
                         </li>
                     </ul>
                 </div>
@@ -134,16 +155,16 @@
 
     <section class="bottom-footer centered">
         <div class="left-side">
-            <button>sign-up</button>
+            <button>sign up now!</button>
         </div>
         <div class="right-side">
             <h2>follow us:</h2>
-            <div class="icons">
-                <span>icon</span>
-                <span>icon</span>
-                <span>icon</span>
-                <span>icon</span>
-            </div>
+            <ul class="icons">
+                <li v-for="logo in socials" :key="logo.src" >
+                    <img :src="getImageUrl(logo.src)" alt="logo">
+                    <!-- <img src="../assets/img/footer-facebook.png" alt=""> -->
+                </li>
+            </ul>
         </div>
     </section>
 </template>
@@ -185,6 +206,7 @@
 ul {
     list-style-type: none;
     li {
+        cursor: pointer;
         a {
             color: lighten($color: #303030, $amount: 40%);
             text-decoration: none;
@@ -206,5 +228,35 @@ h2 {
     background-color: $primary-grey;
     @include flex(row, space-between, center);
     height: 100px;
+    .left-side {
+        button {
+            padding: 8px 12px;
+            border: 2px solid $primary-blue;
+            background-color: transparent;
+            text-transform: uppercase;
+            color: white;
+            &:hover {
+                background-color: white;
+                color: $primary-grey;
+                cursor: pointer;
+            }
+        }
+    }
+    .right-side {
+        @include flex(row, space-evenly, center);
+        gap: 12px;
+        h2 {
+            color: $primary-blue;
+            margin: 0;
+        }
+        .icons {
+            @include flex(row, space-between, center);
+            gap: 6px;
+            img {
+                height: 30px;
+                width: 30px;
+            }
+        }
+    }
 }
 </style>

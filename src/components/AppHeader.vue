@@ -78,6 +78,7 @@ nav {
                 height: 100%;
                 @include flex(column, center, center);
                 align-items: center;
+                cursor: pointer;
                 &:hover {
                     border-bottom: 4px solid $primary-blue;
                     a {
