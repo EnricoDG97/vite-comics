@@ -10,7 +10,7 @@
 </script>
 
 <template>
- <section class="centered">
+ <section class="blue-banner centered">
     section 2
  </section>
 </template>
@@ -19,7 +19,7 @@
 @use "../style/partials/mixins" as *;
 @use "../style/partials/variables" as *;
 
-section.centered {
+section.blue-banner.centered {
     @include flex(row, start, center);
     color: white;
     font-size: xx-large;
