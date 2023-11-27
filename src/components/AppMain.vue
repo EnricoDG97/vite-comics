@@ -100,10 +100,18 @@ export default {
   <AppJumbotron />
 
   <section class="series-list centered">
+    <div class="title">
+      <h3>current series</h3>
+    </div>
     <div class="series row">
       <div v-for="(card, index) in cards" :key="index" class="col">
         <AppSerieCard :image="card.thumb" :title="card.series"/>
       </div>
+    </div>
+    <div class="load-more">
+      <button>
+        <h3>load more</h3>
+      </button>
     </div>
   </section>
 
@@ -122,14 +130,41 @@ export default {
   background-color: $primary-darkgrey;
   padding-top: 50px;
   padding-bottom: 50px;
-
+  position: relative;
+    .title {
+      background-color: $primary-blue;
+      padding: 8px 12px;
+      position: absolute;
+      top: -5%;
+      left: 10%;
+      h3 {
+        text-transform: uppercase;
+        color: white;
+      }
+    }
     .row {
     @include flex(row, center, center);
     flex-wrap: wrap;
-    .col{
-      width: calc(100% / 6);
-      padding: 1rem;
+      .col{
+        width: calc(100% / 6);
+        padding: 1rem;
+      }
     }
-  }
+    .load-more {
+      button {
+        text-align: center;
+        width: 200px;
+        background-color: $primary-blue;
+        border-radius: 8px;
+        padding: 8px 12px;
+        h3 {
+          text-transform: uppercase;
+          color: white;
+        }
+      }
+      bottom: 2%;
+      position: absolute;
+      left: calc(50% - 100px );
+    }
 }
 </style>
