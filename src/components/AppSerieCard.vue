@@ -31,7 +31,6 @@
 .card {
     img {
         width: 100%;
-        height: 200px;
     }
     h2 {
         font-size: small;

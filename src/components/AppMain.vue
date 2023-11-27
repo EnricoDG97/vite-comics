@@ -137,6 +137,7 @@ export default {
       position: absolute;
       top: -5%;
       left: 10%;
+      box-shadow: -1px -5px 15px 5px #000000;
       h3 {
         text-transform: uppercase;
         color: white;
@@ -157,6 +158,7 @@ export default {
         background-color: $primary-blue;
         border-radius: 8px;
         padding: 8px 12px;
+        border: none;
         h3 {
           text-transform: uppercase;
           color: white;
